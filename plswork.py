@@ -113,7 +113,7 @@ def identify_speaker(file_path, gmm_models, speakers):
     identified_speaker = speakers[max_likelihood_idx]
 
     return likelihoods
-
+print('')
 #MAIN EXECUTES
 gmm_models, speakers = speaker_recognition_system('data')
 # print(len(mfcc[0]))
