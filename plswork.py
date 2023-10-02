@@ -50,7 +50,8 @@ def extract_features(file_path, sr):
     lpcc = compute_lpcc(speech,sr,num_coefficients=13)
     # print(len(np.vstack(lpcc)[0]))
     # Transpose to have shape (time_steps, n_mfcc)
-    combined_features = np.vstack((mfcc.T,lpcc))  # You can add more features if needed
+    [gp,mgdcc]=modified_group_delay_feature(file_name=file_path,num_coeff=13)
+    combined_features = np.vstack((mfcc.T,lpcc,mgdcc))  # You can add more features if needed
     # print(len(combined_features[0]))
     return combined_features
 
